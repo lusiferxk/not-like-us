@@ -24,6 +24,9 @@ const pool = new Pool({
   // Keep-alive to survive idle proxy timeouts (e.g. RDS Proxy, PgBouncer)
   keepAlive: true,
   keepAliveInitialDelayMillis: 10_000,
+  
+  // AWS RDS requires SSL connections
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
 
 // Surface connection errors immediately rather than silently failing
