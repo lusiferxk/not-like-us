@@ -22,6 +22,7 @@ import pool from './config/db.js';
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
+const API_VERSION = process.env.API_VERSION || 'v1';
 
 // ─── Security Headers ────────────────────────────────────────────────────────
 app.use(helmet());
@@ -60,7 +61,6 @@ app.use(`/api/${API_VERSION}/orders`, orderLimiter);
 app.set('trust proxy', 1);
 
 // ─── API Routes ───────────────────────────────────────────────────────────────
-const API_VERSION = process.env.API_VERSION || 'v1';
 app.use(`/api/${API_VERSION}`, router);
 
 // ─── 404 & Error Boundaries ──────────────────────────────────────────────────
