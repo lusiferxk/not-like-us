@@ -1,0 +1,52 @@
+# ─── Dependencies ────────────────────────────────────────────
+node_modules/
+.npm
+
+# ─── Environment variables ───────────────────────────────────
+# NEVER commit .env — it contains real passwords and API keys
+.env
+.env.local
+.env.*.local
+
+# ─── Logs ────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pids/
+*.pid
+*.seed
+
+# ─── OS generated ────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+# ─── IDE / Editor ────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Build / Temp ────────────────────────────────────────────
+dist/
+build/
+tmp/
+temp/
+*.zip
+expire-orders-lambda.zip
+
+# ─── SSL / Certs ─────────────────────────────────────────────
+*.pem
+*.key
+*.crt
+*.cert
+
+# ─── PM2 ─────────────────────────────────────────────────────
+.pm2/

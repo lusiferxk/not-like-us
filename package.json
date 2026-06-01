@@ -1,0 +1,36 @@
+{
+  "name": "not-like-us-backend",
+  "version": "1.0.0",
+  "description": "High-traffic production e-commerce backend — async SQS-driven architecture",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "worker:orders": "node workers/orderWorker.js",
+    "worker:payments": "node workers/paymentWorker.js",
+    "worker:emails": "node workers/emailWorker.js",
+    "cron:expire-orders": "node cron/expireOrders.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-eventbridge": "^3.600.0",
+    "@aws-sdk/client-scheduler": "^3.600.0",
+    "@aws-sdk/client-sqs": "^3.600.0",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.12.0",
+    "resend": "^6.12.4",
+    "uuid": "^10.0.0",
+    "winston": "^3.13.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
